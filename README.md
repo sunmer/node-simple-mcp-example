@@ -37,14 +37,10 @@ Edit the claude_desktop_config.json file (usually found in ~/.claude/ or the app
 * Restart Claude
 * Once restarted, you should see two new MCP tools appear below the input bar in Claude, each marked with a 🛠️ hammer icon:
 
-post_creation – for adding new posts to your mock database
-post_query – for retrieving posts
-
-Try prompting Claude with something like:
-
-"get all posts"
+* Try prompting Claude with something like:
+> "get all posts"
 or
-"insert a post with id 500, title "created by claude" and views 123"
+> "insert a post with id 500, title "created by claude" and views 123"
 
 Claude will use the MCP tools you've configured to send actual requests to your local mock server.
 
