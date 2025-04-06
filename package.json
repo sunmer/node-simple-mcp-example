@@ -1,0 +1,26 @@
+{
+  "name": "mock-db-model-context-protocol-server",
+  "version": "0.0.1",
+  "description": "MCP Server for a mock db",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "mcp-server": "node dist/index.js",
+    "build": "tsc && shx chmod +x dist/*.js",
+    "mock-api": "npx json-server db.json",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.7.0",
+    "@types/node": "^22",
+    "json-server": "^1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "shx": "^0.3.4",
+    "typescript": "^5.8.2"
+  }
+}
