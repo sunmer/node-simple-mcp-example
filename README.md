@@ -1,18 +1,51 @@
-Simple MCP example where you use Claude to interact with a local JSON http server file
+# 🛠️ Simple MCP Example with Claude and a Local JSON HTTP Server
 
-Run 
-* npm install
-* npm run mock-api to expose the database you will query & insert mock data against
-* npm run mcp-server to start the mcp server which will communicate with the mock database started in the previous step
-* install Claude for MacOS desktop
-* edit 'claude_desktop_config.json' so that it looks something like this:
+This guide walks you through a basic setup where you use **Claude (MacOS desktop)** to interact with a local **mock JSON server** via **MCP (Model-Computer Protocol)**.
+
+---
+
+## 🧰 Prerequisites
+
+- [Node.js](https://nodejs.org/en) installed
+- Claude for MacOS (download from [Anthropic](https://www.anthropic.com/index/claude))
+- Basic understanding of how local servers and Claude MCP tools work
+
+---
+
+## 🚀 Step-by-Step Setup
+
+### 1. Install Dependencies
+In the root of your project, install the required packages:
+
+```bash
+npm install
+npm run mock-api
+npm run mcp-server
+````
+Edit the claude_desktop_config.json file (usually found in ~/.claude/ or the app's internal config folder), and add your MCP server config:
+```
 {
   "mcpServers": {
     "json-chat": {
       "command": "node",
-      "args": ["/path/to/mcp-example/dist/index.js"]
+      "args": ["/absolute/path/to/mcp-example/dist/index.js"]
     }
   }
 }
-* restart claude
-* 2 mcp tools should show up below the prompt input bar, with the hammer logo exposing 'post_creation' and 'post_query' as MCP tools
+```
+
+* Restart Claude
+* Once restarted, you should see two new MCP tools appear below the input bar in Claude, each marked with a 🛠️ hammer icon:
+
+post_creation – for adding new posts to your mock database
+post_query – for retrieving posts
+
+Try prompting Claude with something like:
+
+"get all posts"
+or
+"insert a post with id 500, title "created by claude" and views 123"
+
+Claude will use the MCP tools you've configured to send actual requests to your local mock server.
+
+Make sure you're running the JSON server, MCP server when you prompt Claude.
