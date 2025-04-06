@@ -45,3 +45,11 @@ Edit the claude_desktop_config.json file (usually found in ~/.claude/ or the app
 Claude will use the MCP tools you've configured to send actual requests to your local mock server.
 
 Make sure you're running the JSON server, MCP server when you prompt Claude.
+
+## Want to skip using Claude?
+Run 
+```
+npx @modelcontextprotocol/inspector node build/index.js
+```
+
+You should then see all of the available resources at http://127.0.0.1:6274/#resources
