@@ -39,7 +39,7 @@ Edit the claude_desktop_config.json file (usually found in ~/.claude/ or the app
 
 * Try prompting Claude with something like:
 > "get all posts"
-or
+
 > "insert a post with id 500, title "created by claude" and views 123"
 
 Claude will use the MCP tools you've configured to send actual requests to your local mock server.
