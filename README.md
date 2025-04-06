@@ -46,7 +46,7 @@ Claude will use the MCP tools you've configured to send actual requests to your 
 
 Make sure you're running the JSON server, MCP server when you prompt Claude.
 
-## Want to skip using Claude?
+## Testing
 Run 
 ```
 npx @modelcontextprotocol/inspector node build/index.js
